@@ -15,7 +15,7 @@ public class Kalkulator extends AppCompatActivity {
 
     EditText edtNilaiA, edtNilaiB;
     Button btnTambah, btnKali, btnBagi;
-    TextView txtHasil, txtTitle;
+    TextView txtTitle, txtHasil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,18 +23,19 @@ public class Kalkulator extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_kalkulator);
 
+        txtTitle = findViewById(R.id.txtTitle);
         edtNilaiA = findViewById(R.id.edtNilaiA);
         edtNilaiB = findViewById(R.id.edtNilaiB);
         btnTambah = findViewById(R.id.btnTambah);
         btnKali = findViewById(R.id.btnKali);
         btnBagi = findViewById(R.id.btnBagi);
         txtHasil = findViewById(R.id.txtHasil);
-        txtTitle = findViewById(R.id.txtTitle);
 
         String userName = getIntent().getStringExtra("USER_NAME");
         if (userName != null) {
-            txtHasil.setText("Kalkulator Sederhana : " + userName);
+            txtTitle.setText("Kalkulator Sederhana : " + userName);
         }
+
 
         View.OnClickListener Kalkulasi = new View.OnClickListener() {
             @Override
